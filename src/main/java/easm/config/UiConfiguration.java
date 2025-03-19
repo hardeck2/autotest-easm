@@ -17,8 +17,13 @@ public class UiConfiguration {
         return props;
     }
 
-    public static void setupSelenide(String chromeDriverPath) {
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+    public static void setupSelenide() {
+        String chromeDriverPath = properties.getProperty("webdriver.chrome.driver");
+        if (chromeDriverPath != null && !chromeDriverPath.isEmpty()) {
+            System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+        } else {
+            throw new IllegalStateException("webdriver.chrome.driver is not specified in application.properties");
+        }
         Configuration.browser = properties.getProperty("browser", "chrome");
         Configuration.timeout = Long.parseLong(properties.getProperty("timeout", "10000"));
         Configuration.headless = Boolean.parseBoolean(properties.getProperty("headless", "false"));
