@@ -15,7 +15,7 @@ public class RegistrationTests {
 
     @BeforeMethod
     public void setUp() {
-        UiConfiguration.setupSelenide("C:\\Users\\Sapolsky\\Documents\\easm\\src\\main\\resources\\chromedriver.exe");
+        UiConfiguration.setupSelenide();
     }
 
     @Test
