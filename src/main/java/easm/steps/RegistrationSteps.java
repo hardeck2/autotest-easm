@@ -10,7 +10,6 @@ public class RegistrationSteps {
     @Step("Регистрация нового пользователя")
     public static RegistrationPage registr(RegistrationDTO dto) {
         return RegistrationPage.open()
-                .clickGet()
                 .fillUserName(dto.getUserName())
                 .fillEmail(dto.getLogin())
                 .fillPhoneNumber(dto.getPhoneNumber())
@@ -24,7 +23,6 @@ public class RegistrationSteps {
     @Step("Регистрация нового пользователя с ошибкой")
     public static RegistrationPage registrWithError(RegistrationDTO dto, String errorText) {
         return RegistrationPage.open()
-                .clickGet()
                 .fillUserName(dto.getUserName())
                 .fillEmail(dto.getLogin())
                 .fillPhoneNumber(dto.getPhoneNumber())

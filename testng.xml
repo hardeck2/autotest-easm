@@ -1,9 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Suite">
-    <test name="Registration Tests">
+<suite name="EASM Test Suite">
+    <test name="UI Registration Tests">
         <classes>
-            <class name="api.RegistrationTests"/>
-            <class name="ui.RegistrationTests"/>
+            <class name="easm.tests.api.RegistrationTests"/>
+        </classes>
+    </test>
+    <test name="API Registration Tests">
+        <classes>
+            <class name="easm.tests.ui.RegistrationTests"/>
         </classes>
     </test>
 </suite>

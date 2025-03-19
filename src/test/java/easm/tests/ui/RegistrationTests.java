@@ -1,4 +1,4 @@
-package ui;
+package easm.tests.ui;
 
 import easm.config.UiConfiguration;
 import easm.dto.RegistrationDTO;

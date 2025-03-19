@@ -1,4 +1,4 @@
-package api;
+package easm.tests.api;
 
 import easm.config.ApiConfiguration;
 import easm.dto.RegistrationDTO;

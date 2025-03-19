@@ -68,12 +68,6 @@ public class RegistrationPage {
         return Selenide.open(UiConfiguration.getRegistrationPath(), RegistrationPage.class);
     }
 
-    @Step("Нажать на кнопку " + GET_BUTTON)
-    public RegistrationPage clickGet() {
-        CommonPageHelper.clickButton(getButton, GET_BUTTON);
-        return this;
-    }
-
     @Step("Заполнить поле - " + FIELD_USERNAME)
     public RegistrationPage fillUserName(String value) {
         CommonPageHelper.fillTextField(userName, value);
@@ -128,10 +122,6 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage verifyError(String text) {
-        errorMessage.shouldBe(visible).shouldHave(text(text));
-        return this;
-    }
     public RegistrationPage verifyErrorWithOutElement(String text) {
         CommonPageHelper.getElementByText(text);
         return this;
