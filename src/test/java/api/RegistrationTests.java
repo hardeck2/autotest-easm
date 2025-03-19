@@ -37,7 +37,7 @@ public class RegistrationTests {
     @Story("Negative Scenarios")
     @Description("Verify unsuccessful registration API with wrong userName")
     @Severity(SeverityLevel.CRITICAL)
-    public void testUnSuccessfulRegistration() {
+    public void testWithWrongUserName() {
         RegistrationDTO request = RegistrationProvider.getRegistrationFormWithWrongName();
         RegistrationResponse register = apiClient.registerAndGetResponse(request);
 
@@ -50,7 +50,7 @@ public class RegistrationTests {
     @Story("Negative Scenarios")
     @Description("Verify error on empty fields")
     @Severity(SeverityLevel.NORMAL)
-    public void testEmptyFields() {
+    public void testWithShortPassword() {
         RegistrationDTO request = RegistrationProvider.getRegistrationFormWithWrongPassword();
         RegistrationResponse register = apiClient.registerAndGetResponse(request);
 

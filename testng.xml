@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite">
+    <test name="Registration Tests">
+        <classes>
+            <class name="api.RegistrationTests"/>
+            <class name="ui.RegistrationTests"/>
+        </classes>
+    </test>
+</suite>

@@ -24,7 +24,7 @@ public class RegistrationProvider {
     public static RegistrationDTO getRegistrationFormWithWrongName() {
         System.out.println(generatePhoneNumber());
         return RegistrationDTO.builder()
-                .userName(String.valueOf(faker.number().randomNumber()))
+                .userName(String.valueOf(faker.number().numberBetween(1,1)))
                 .login(faker.internet().emailAddress())
                 .phoneNumber(generatePhoneNumber())
                 .password(getPassword())
