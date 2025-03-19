@@ -28,6 +28,7 @@ public class RegistrationTests {
     public void testSuccessfulRegistration() {
         RegistrationDTO request = RegistrationProvider.getRegistrationForm();
         RegistrationResponse register = apiClient.registerAndGetResponse(request);
+
         Assertions.assertThat(register.isType()).isTrue();
         Assertions.assertThat(register.getText()).contains("Сейчас на ваш телефон поступит звонок или сообщение, последние 4 цифры являются кодом");
     }
