@@ -30,7 +30,9 @@ public class RegistrationTests {
         RegistrationResponse register = apiClient.registerAndGetResponse(request);
 
         Assertions.assertThat(register.isType()).isTrue();
-        Assertions.assertThat(register.getText()).contains("Сейчас на ваш телефон поступит звонок или сообщение, последние 4 цифры являются кодом");
+        Assertions.assertThat(register.getText())
+                .as("Текст ошибки не соответствуют ожидаемому")
+                .contains("Сейчас на ваш телефон поступит звонок или сообщение, последние 4 цифры являются кодом");
     }
 
     @Test
@@ -42,7 +44,9 @@ public class RegistrationTests {
         RegistrationResponse register = apiClient.registerAndGetResponse(request);
 
         Assertions.assertThat(register.isType()).isFalse();
-        Assertions.assertThat(register.getMessage()).contains("Ваше имя (ФИО) не должно быть короче 3 символов");
+        Assertions.assertThat(register.getMessage())
+                .as("Текст ошибки не соответствуют ожидаемому")
+                .contains("Ваше имя (ФИО) не должно быть короче 3 символов");
     }
 
 
@@ -55,6 +59,8 @@ public class RegistrationTests {
         RegistrationResponse register = apiClient.registerAndGetResponse(request);
 
         Assertions.assertThat(register.isType()).isFalse();
-        Assertions.assertThat(register.getMessage()).contains("Пароль должен состоять минимум из 8 символов");
+        Assertions.assertThat(register.getMessage())
+                .as("Текст ошибки не соответствуют ожидаемому")
+                .contains("Пароль должен состоять минимум из 8 символов");
     }
 }

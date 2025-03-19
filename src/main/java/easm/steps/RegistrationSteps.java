@@ -18,6 +18,7 @@ public class RegistrationSteps {
                 .clickSingUpForm()
                 .clickSubmit()
                 .verifyAndAcceptBrowserPopup("Сейчас на ваш телефон поступит звонок или сообщение, последние 4 цифры являются кодом");
+
     }
 
     @Step("Регистрация нового пользователя с ошибкой")
